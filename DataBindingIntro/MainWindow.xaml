@@ -1,0 +1,28 @@
+﻿<Window x:Class="DataBindingIntro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBindingIntro"
+        xmlns:models="clr-namespace:DataBindingIntro.Models"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="525">
+    <Window.DataContext>
+        <models:Livro></models:Livro>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label>Codigo</Label>
+                <TextBox x:Name="codigoTextBox" Width="394" Text="{Binding Codigo}"></TextBox>
+            </StackPanel>
+           
+            <StackPanel Orientation="Horizontal">
+                <Label>Nome</Label>
+                <TextBox x:Name="nomeTextBox" Width="400" Text="{Binding Nome}"></TextBox>
+            </StackPanel>
+
+            <Button Click="Button_Click">Ok</Button>
+        </StackPanel>
+    </Grid>
+</Window>
